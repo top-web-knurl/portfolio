@@ -21,8 +21,31 @@ const Navbar = () => {
                         window.scroll(0, 0);
                     }}
                 >
-                    <img src={logo} alt="logo"  className="w-9 g-9 object-contain"/>
+                    <img
+                        src={logo}
+                        alt="logo"
+                        className="w-28 g-28 object-contain"
+                    />
+                    <p className="text-white text-[18px] font-bold">
+                        Разработка веб-сайтов
+                    </p>
                 </Link>
+                <ul className="list-none hidden sm:flex flex-row gap-10">
+                    {navLinks.map((link) => {
+                        <li
+                            key={link.id}
+                            className={`${
+                                active === link.title 
+                                ? "text-white"
+                                : "text-secondary"
+                            }`}
+                        >
+                            <a href={`#${link.id}`}>
+                                {link.title}
+                            </a>
+                        </li>
+                    })}
+                </ul>
             </div>
         </nav>
     );
