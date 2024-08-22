@@ -49,10 +49,10 @@ const Navbar = () => {
                     ))}
                 </ul>
 
-                <button className="block w-16 h-8 relative  " onClick={() => setToggle(!toggle)}>
-                    <span className={`bg-white  h-0.5 absolute left-0  transition-all origin-center ${toggle ? "rotate-45 w-full top-1/2" : "top-0 w-1/2"}`}></span>
-                    <span className={`bg-white w-full h-0.5 absolute left-0 top-1/2 transition-all origin-center ${toggle ? "" : ""}`}></span>
-                    <span className={`bg-white  h-0.5 absolute right-0 bottom-0 transition-all origin-center ${toggle ? "-rotate-45 w-full top-1/2" : "w-1/2"}`}></span>
+                <button className="block w-16 h-8 relative" onClick={() => setToggle(!toggle)}>
+                    <span className={`bg-white  h-0.5 absolute left-0  transition-all origin-center ${toggle ? "rotate-45 w-full top-1/2 delay-150" : "top-0 w-1/2"}`}></span>
+                    <span className={`bg-white w-full h-0.5 absolute left-0 top-1/2 transition-all origin-center ${toggle ? "scale-0" : "delay-150"}`}></span>
+                    <span className={`bg-white  h-0.5 absolute right-0 bottom-0 transition-all origin-center ${toggle ? "-rotate-45 w-full top-1/2 delay-150" : "w-1/2"}`}></span>
                 </button>
             </div>
         </nav>
