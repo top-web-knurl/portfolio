@@ -11,10 +11,10 @@ const Hero = () => {
         </div>
 
         <div>
-          <h1 className={`${styles.heroHeadText} text-white`}>
+          <h1 className={`${styles.heroHeadText} text-white relative z-10`}>
             {aboutUs.greeting}  <span className="main-gradient-text">{aboutUs.name}</span>
           </h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
+          <p className={`${styles.heroSubText} mt-2 text-white-100 relative z-10`}>
             {aboutUs.descriprion1}
             <br className="sm:block hidden" />
             {aboutUs.descriprion2}
