@@ -18,7 +18,7 @@ html, body {
   color-scheme: dark;
 }
 *::selection{
-  background: #796fb7;
+  background: #770061;
   color: #fff;
 }
 
@@ -69,10 +69,10 @@ body {
   }
 }
 
-.green-pink-gradient {
+.violet-pink-gradient {
   background: "#00cea8";
-  background: linear-gradient(90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
-  background: -webkit-linear-gradient(-90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
+  background: linear-gradient(90.13deg, #770162 1.9%, #e90a51 97.5%);
+  background: -webkit-linear-gradient(-90.13deg, #770162 1.9%, #e90a51 97.5%);
 }
 
 .orange-text-gradient {
