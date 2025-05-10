@@ -3,7 +3,7 @@ import { ComputersCanvas } from './canvas'
 import { aboutUs } from "../constants";
 const Hero = () => {
   return (
-    <section className='relative w-full h-screen mx-auto'>
+    <section className='relative w-full h-screen mx-auto min-h-[600px]'>
       <div className={`${styles.paddingX} absolute inset-0 top-[120px] max-w7xl flex flex-row items-start gap-5`}>
         <div className="flex flex-col justyfy-center items-center mt-5">
           <div className="w-1 sm:h-80 h-40 violet-gradient animation-bg-repeat" />
