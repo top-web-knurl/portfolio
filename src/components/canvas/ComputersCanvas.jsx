@@ -31,20 +31,24 @@ const Computers = ({ isMobail }) => {
 
   return (
     <mesh>
-      <hemisphereLight intensity={0.15} groundColor="black" />
-      <pointLight intensity={1} />
+      <hemisphereLight intensity={0.7} groundColor="black" />
+      <pointLight 
+      intensity={1} 
+      distance={3}
+      decay={1}
+      />
       <directionalLight
         position={[-20, 50, 10]}
         angle={0.12}
         penumbra={1}
-        intensity={1}
+        intensity={1.2}
         castShadow
         shadow-mapSize={1024}
       />
       <primitive
         object={computer.scene}
-        scale={isMobail ? scale : 0.75}
-        position={isMobail ? [0, -4.2, -.5] : [0, -3.75, -1.5]}
+        scale={scale}
+        position={isMobail ? [0, -4.2, -.5] : [0, -2.8, -1.3]}
         rotation={[-0.01, -0.2, 0]}
       />
     </mesh>
