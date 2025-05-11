@@ -1,5 +1,5 @@
 import  { Suspense, useEffect, useState } from 'react'
-import { Canvas, useThree } from '@react-three/fiber'
+import { Canvas } from '@react-three/fiber'
 import { OrbitControls, useGLTF } from '@react-three/drei'
 import CanvasLoader from '../Loader'
 import PropTypes from 'prop-types'
@@ -7,7 +7,6 @@ import PropTypes from 'prop-types'
 
 const Computers = ({ isMobail }) => {
   const computer = useGLTF('./desktop_pc/scene.gltf')
-  const { viewport } = useThree()
   const [scale, setScale] = useState(1)
 
   useEffect(() => {
@@ -27,7 +26,7 @@ const Computers = ({ isMobail }) => {
     window.addEventListener('resize', updateScale)
 
     return () => window.removeEventListener('resize', updateScale)
-  }, [viewport.factor])
+  }, [scale])
 
   return (
     <mesh>
