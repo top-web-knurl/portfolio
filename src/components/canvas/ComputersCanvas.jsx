@@ -1,13 +1,35 @@
 import  { Suspense, useEffect, useState } from 'react'
-import { Canvas } from '@react-three/fiber'
-import { OrbitControls, useGLTF } from '@react-three/drei'
+import { Canvas, useFrame } from '@react-three/fiber'
+import { Float, OrbitControls, useGLTF } from '@react-three/drei'
 import CanvasLoader from '../Loader'
 import PropTypes from 'prop-types'
+import { useRef } from 'react'
+import { MathUtils } from 'three'
 
+const { lerp } = MathUtils
+const DAMPING = 0.03
 
 const Computers = ({ isMobail }) => {
   const computer = useGLTF('./desktop_pc/scene.gltf')
   const [scale, setScale] = useState(1)
+  const ref = useRef()
+  const targetRotationY = useRef(0)
+  const currentRotationY = useRef(0)
+ 
+
+  useFrame(() => {
+    const scrollTop = window.scrollY || window.pageYOffset
+    const maxScroll = document.body.scrollHeight - window.innerHeight
+    const scrollProgress = maxScroll > 0 ? scrollTop / maxScroll : 0
+
+   
+    targetRotationY.current = scrollProgress * Math.PI 
+ 
+    currentRotationY.current = lerp(currentRotationY.current, targetRotationY.current, DAMPING)
+    if (ref.current) {
+      ref.current.rotation.y = currentRotationY.current
+    }
+  })
 
   useEffect(() => {
     const updateScale = () => {
@@ -26,9 +48,14 @@ const Computers = ({ isMobail }) => {
     window.addEventListener('resize', updateScale)
 
     return () => window.removeEventListener('resize', updateScale)
-  }, [scale])
+  }, [])
 
   return (
+    <Float 
+      speed={2}
+      rotationIntensity={0}
+      floatIntensity={1}
+    >
     <mesh>
       <hemisphereLight intensity={0.7} groundColor="black" />
       <pointLight 
@@ -45,12 +72,14 @@ const Computers = ({ isMobail }) => {
         shadow-mapSize={1024}
       />
       <primitive
+        ref={ref}
         object={computer.scene}
-        scale={scale}
         position={isMobail ? [0, -4.2, -.5] : [0, -2.8, -1.3]}
         rotation={[-0.01, -0.2, 0]}
+        scale={scale}
       />
     </mesh>
+    </Float>
   )
 }
 
@@ -80,9 +109,9 @@ const ComputersCanvas = () => {
 
   return (
     <Canvas
-      frameloop="demand"
+      frameloop="always"
       shadows
-      camera={{ position: [20, 3, 5], fov: 25 }}
+      camera={{ position: [20, 5, -2], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense
@@ -92,6 +121,8 @@ const ComputersCanvas = () => {
           enableZoom={false}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
+          enableDamping 
+          dampingFactor={DAMPING}
         />
         <Computers isMobail={isMobail} />
       </Suspense>
