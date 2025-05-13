@@ -6,6 +6,7 @@ import PropTypes from 'prop-types'
 
 const Ball = (props) => {
   const [decal] = useTexture([props.imgUrl])
+
   return (
     <Float 
       speed={2} 
@@ -16,13 +17,6 @@ const Ball = (props) => {
       castShadow 
       receiveShadow 
       scale={2.75}
-      // onPointerOver={(e) => {
-      //   e.object.scale.set(3.25, 3.25, 3.25)
-      // }}
-      // onPointerOut={(e) => {
-      //   e.object.scale.set(2.75, 2.75, 2.75) 
-      // }}
-      // onPointerOut={(e) => e.camera.position.x = 0}
       >
         <ambientLight
           intensity={0.25}
