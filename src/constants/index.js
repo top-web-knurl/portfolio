@@ -23,6 +23,8 @@ import {
   jobit,
   tripguide,
   threejs,
+  github,
+  telegram,
 } from "../assets";
 
 export const navLinks = [
@@ -40,13 +42,13 @@ export const navLinks = [
   },
 ];
 
-const aboutUs = 
-  {
-    name: "Тимур",
-    greeting: "Привет, меня зовут",
-    descriprion1: "💻 Я — веб-разработчик, создающий уникальные и функциональные веб-сайты и веб-приложения.",
-    descriprion2: " 🚀 Моя работа — превращать ваши идеи в реальность и делать интернет лучше!",
-  };
+const aboutUs =
+{
+  name: "Тимур",
+  greeting: "Привет, меня зовут",
+  descriprion1: "💻 Я — веб-разработчик, создающий уникальные и функциональные веб-сайты и веб-приложения.",
+  descriprion2: " 🚀 Моя работа — превращать ваши идеи в реальность и делать интернет лучше!",
+};
 const services = [
   {
     title: "Web Developer!",
@@ -119,6 +121,22 @@ const technologies = [
     name: "docker",
     icon: docker,
   },
+];
+
+const contacts = [
+  {
+    name: "Telegram",
+    icon: telegram,
+    iconColor: "#27a7e7",
+    href: 'https://t.me/web_samurai'
+  },
+  {
+    name: "Github",
+    icon: github,
+    iconColor: "#ccc",
+    href: "https://github.com/top-web-knurl"
+  },
+
 ];
 
 const experiences = [
@@ -269,4 +287,4 @@ const projects = [
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects, aboutUs };
+export { services, technologies, experiences, testimonials, projects, aboutUs, contacts };

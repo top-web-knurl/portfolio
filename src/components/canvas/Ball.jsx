@@ -26,7 +26,7 @@ const Ball = (props) => {
         />
         <icosahedronGeometry args={[1, 4]} />
         <meshStandardMaterial 
-          color="#fff"
+          color={props.bgColor ? props.bgColor : 'white'}
           polygonOffset
           polygonOffsetFactor={-4}
           flatShading
@@ -43,10 +43,11 @@ const Ball = (props) => {
 }
 
 Ball.propTypes = {
-  imgUrl: PropTypes.string.isRequired
+  imgUrl: PropTypes.string.isRequired,
+  bgColor: PropTypes.string
 }
 
-const BallCanvas = ({ icon }) => {
+const BallCanvas = ({ icon, color }) => {
   return (
     <Canvas
       gl={{ preserveDrawingBuffer: true }}
@@ -61,14 +62,16 @@ const BallCanvas = ({ icon }) => {
            enableDamping 
            dampingFactor={0.01}
         />
-        <Ball imgUrl={icon} />
+       
+        <Ball imgUrl={icon} bgColor={color} />
       </Suspense>
     </Canvas>
   )
 }
 
 BallCanvas.propTypes = {
-  icon: PropTypes.string.isRequired
+  icon: PropTypes.string.isRequired,
+  color: PropTypes.string
 }
 
 export default BallCanvas
