@@ -1,4 +1,4 @@
-import  { Suspense, useEffect, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Float, OrbitControls, useGLTF } from '@react-three/drei'
 import CanvasLoader from '../Loader'
@@ -13,19 +13,44 @@ const Computers = ({ isMobail }) => {
   const computer = useGLTF('./desktop_pc/scene_optimized.glb', true)
   const [scale, setScale] = useState(1)
   const ref = useRef()
+  const scrollYRef = useRef(0)
+  const maxScrollRef = useRef(1)
   const targetRotationY = useRef(0)
   const currentRotationY = useRef(0)
- 
+
+
+  useEffect(() => {
+    // Расчет максимальной прокрутки
+    const calculateMaxScroll = () => {
+      maxScrollRef.current = document.body.scrollHeight - window.innerHeight
+    }
+
+    const handleScroll = () => {
+      scrollYRef.current = window.scrollY || window.pageYOffset
+    }
+
+    // Инициализация
+    calculateMaxScroll()
+    handleScroll()
+
+    window.addEventListener('resize', calculateMaxScroll)
+    window.addEventListener('scroll', handleScroll, { passive: true })
+
+    // Очистка при размонтировании
+    return () => {
+      window.removeEventListener('resize', calculateMaxScroll)
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
 
   useFrame(() => {
-    const scrollTop = window.scrollY || window.pageYOffset
-    const maxScroll = document.body.scrollHeight - window.innerHeight
-    const scrollProgress = maxScroll > 0 ? scrollTop / maxScroll : 0
+    // Считаем прогресс из уже готовых значений в рефах
+    const scrollProgress = maxScrollRef.current > 0 ? scrollYRef.current / maxScrollRef.current : 0
+    targetRotationY.current = scrollProgress * Math.PI
 
-   
-    targetRotationY.current = scrollProgress * Math.PI 
- 
     currentRotationY.current = lerp(currentRotationY.current, targetRotationY.current, DAMPING)
+
     if (ref.current) {
       ref.current.rotation.y = currentRotationY.current
     }
@@ -51,34 +76,34 @@ const Computers = ({ isMobail }) => {
   }, [])
 
   return (
-    <Float 
+    <Float
       speed={2}
       rotationIntensity={0}
       floatIntensity={1}
     >
-    <mesh>
-      <hemisphereLight intensity={0.7} groundColor="black" />
-      <pointLight 
-      intensity={1} 
-      distance={3}
-      decay={1}
-      />
-      <directionalLight
-        position={[-20, 50, 10]}
-        angle={0.12}
-        penumbra={1}
-        intensity={1.2}
-        castShadow
-        shadow-mapSize={1024}
-      />
-      <primitive
-        ref={ref}
-        object={computer.scene}
-        position={isMobail ? [0, -4.2, -.5] : [0, -2.8, -1.3]}
-        rotation={[-0.01, -0.2, 0]}
-        scale={scale}
-      />
-    </mesh>
+      <mesh>
+        <hemisphereLight intensity={0.7} groundColor="black" />
+        <pointLight
+          intensity={1}
+          distance={3}
+          decay={1}
+        />
+        <directionalLight
+          position={[-20, 50, 10]}
+          angle={0.12}
+          penumbra={1}
+          intensity={1.2}
+          castShadow
+          shadow-mapSize={1024}
+        />
+        <primitive
+          ref={ref}
+          object={computer.scene}
+          position={isMobail ? [0, -4.2, -.5] : [0, -2.8, -1.3]}
+          rotation={[-0.01, -0.2, 0]}
+          scale={scale}
+        />
+      </mesh>
     </Float>
   )
 }
@@ -121,7 +146,7 @@ const ComputersCanvas = () => {
           enableZoom={false}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
-          enableDamping 
+          enableDamping
           dampingFactor={DAMPING}
         />
         <Computers isMobail={isMobail} />
