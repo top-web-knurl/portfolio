@@ -10,7 +10,7 @@ const { lerp } = MathUtils
 const DAMPING = 0.03
 
 const Computers = ({ isMobail }) => {
-  const computer = useGLTF('./desktop_pc/scene.gltf')
+  const computer = useGLTF('./desktop_pc/scene_optimized.glb', true)
   const [scale, setScale] = useState(1)
   const ref = useRef()
   const targetRotationY = useRef(0)

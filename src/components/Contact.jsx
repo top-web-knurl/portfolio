@@ -13,7 +13,7 @@ const Contact = () => {
   return (
     <div className='xl:mt-12 xl-flex-row flex flex-col-reverse gap-10 overflow-hidden'>
       <div className='flex-[0.75] bg-black-100 p-8 rounded-2xl'>
-        <p className={styles.sectionSubText}>Частота связи установлена</p>
+        <p className={styles.sectionSubText}>Контакты</p>
         <p className={styles.sectionHeadText}>Как связаться</p>
         <div className="mt-4 flex gap-8">
           <div className="flex flex-row flex-wrap gap-4">
