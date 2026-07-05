@@ -3,7 +3,7 @@
 
 
 import { styles } from '../styles';
-// import { EarthCanvas } from './canvas';
+import { EarthCanvas } from './canvas';
 import { SectionWrapper } from '../hoc';
 import { contacts } from '../constants';
 import { BallCanvas } from './canvas';
@@ -11,8 +11,8 @@ import { BallCanvas } from './canvas';
 
 const Contact = () => {
   return (
-    <div className='xl:mt-12 xl-flex-row flex flex-col-reverse gap-10 overflow-hidden'>
-      <div className='flex-[0.75] bg-black-100 p-8 rounded-2xl'>
+      <div className='xl:mt-12 xl:flex-row flex  flex-col-reverse gap-10 overflow-hidden'>
+      <div className='xl:flex-[50%] bg-black-100 p-8 rounded-2xl'>
         <p className={styles.sectionSubText}>Контакты</p>
         <p className={styles.sectionHeadText}>Как связаться</p>
         <div className="mt-4 flex gap-8">
@@ -37,6 +37,9 @@ const Contact = () => {
             <span className="transform translate-x-0 group-hover:translate-x-1 transition-transform duration-300">&rarr;</span>
           </a>
         </p>
+      </div>
+       <div className="xl:flex-[50%]  xl:h-auto md:h-[450px] h-[300px]">
+        <EarthCanvas />
       </div>
     </div>
   )

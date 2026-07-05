@@ -11,17 +11,17 @@ import 'atropos/css/min'
 
 const ServiceCard = ({ index, title, icon }) => {
   return (
-    <Atropos 
+    <Atropos
       className="xs:w-[250px] w-full rounded-[20px]"
       activeOffset={40}
       shadowScale={1}
-      rotateXMax={20} 
-      rotateYMax={20} 
-      shadow={false} 
+      rotateXMax={20}
+      rotateYMax={20}
+      shadow={false}
       highlight={true}
       data-rounded="inherit"
-    > 
-      <motion.div 
+    >
+      <motion.div
         variants={fadeIn("fade", "ease", 0.5 * index, 0.75)}
         className="w-full violet-pink-gradient p-[1px] rounded-[20px]"
       >
@@ -33,9 +33,9 @@ const ServiceCard = ({ index, title, icon }) => {
             data-atropos-offset="20"
           />
           <h3
-           className='text-white text-[20px]'
-             data-atropos-offset="15"
-           >{title}</h3>
+            className='text-white text-[20px]'
+            data-atropos-offset="15"
+          >{title}</h3>
         </div>
       </motion.div>
     </Atropos>
@@ -62,9 +62,10 @@ const About = () => {
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
-        className="mt-4 text-secondary text-[18px] max-w-3xl leading-[30px]"
+        className="mt-4 text-secondary text-[16px] max-w-3xl leading-[30px]"
       >
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima temporibus sequi maxime perferendis voluptate fugit aliquid a, corporis labore minus tempore, ducimus excepturi, voluptates illo soluta alias repellat quaerat consequatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut consequatur quasi molestiae reprehenderit fugiat sed pariatur sequi laudantium! Ab culpa quaerat magnam. Perspiciatis nesciunt tenetur similique dolore pariatur. Mollitia, voluptates?
+      Занимаюсь веб-разработкой и созданием сайтов с 2020 года. Мне нравится развиваться в этой сфере, поэтому я стараюсь постоянно актуализировать свои навыки и не стоять на месте. Обладаю базой веб-разработчика: HTML, CSS, JavaScript. Из бэкенда работал с PHP и MySQL, в основном в рамках различных CMS (WordPress, Bitrix, Joomla, OpenCart, немного с Magento). Знаком с React (данное портфолио сделано на нём), немного знаю Vue.js. <br />
+      Работаю по современным веб-стандартам. В том числе использую ИИ для ускорения написания шаблонного кода и типовых решений, но не занимаюсь бездумным копированием. Я не «вайбкодер», но и не противлюсь прогрессу.
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10">
