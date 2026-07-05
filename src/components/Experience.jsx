@@ -26,7 +26,7 @@ const ExperianceCard = ({ experiance }) => (
 
     }
   >
-    <h3 className="text-white text-[24px] font-bold">{experiance.title}</h3>
+    <h3 className="text-white text-[21px] font-bold">{experiance.title}</h3>
  
   </VerticalTimelineElement>
 )

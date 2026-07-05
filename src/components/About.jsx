@@ -26,7 +26,7 @@ const ServiceCard = ({ index, title, icon }) => {
         className="w-full violet-pink-gradient p-[1px] rounded-[20px]"
       >
         <div
-          className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col text-center"
+          className="bg-tertiary rounded-[20px] py-5 px-8 min-h-[250px] flex justify-evenly items-center flex-col text-center"
         >
           <img src={icon} alt={title}
             className="w-16 h-16 object-contain"

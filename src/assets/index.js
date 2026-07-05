@@ -6,24 +6,15 @@ import web from "./web.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
 
-import css from "./tech/css.png";
-import docker from "./tech/docker.png";
-import figma from "./tech/figma.png";
-import git from "./tech/git.png";
-import html from "./tech/html.png";
-import javascript from "./tech/javascript.png";
-import mongodb from "./tech/mongodb.png";
-import nodejs from "./tech/nodejs.png";
-import reactjs from "./tech/reactjs.png";
-import redux from "./tech/redux.png";
-import tailwind from "./tech/tailwind.png";
-import typescript from "./tech/typescript.png";
-import threejs from "./tech/threejs.svg";
+import html from "./tech/html.webp";
+import css from "./tech/css.webp";
+import javascript from "./tech/javascript.webp";
+import reactjs from "./tech/reactjs.webp";
+import php from "./tech/php.webp";
+import mysql from "./tech/mysql.webp";
 
-import meta from "./company/meta.png";
-import shopify from "./company/shopify.png";
-import starbucks from "./company/starbucks.png";
-import tesla from "./company/tesla.png";
+import artweb from "./company/artweb.svg";
+import freelance from "./company/freelance.webp";
 
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
@@ -31,6 +22,7 @@ import tripguide from "./tripguide.png";
 
 
 import github from "./contacts/github.svg";
+import mail from "./contacts/mail.webp";
 import telegram from "./contacts/telegram.svg";
 
 export {
@@ -42,25 +34,21 @@ export {
   github,
   menu,
   close,
-  css,
-  docker,
-  figma,
-  git,
+
   html,
+  css,
   javascript,
-  mongodb,
-  nodejs,
   reactjs,
-  redux,
-  tailwind,
-  typescript,
-  threejs,
-  meta,
-  shopify,
-  starbucks,
-  tesla,
+  php,
+  mysql,
+
+  freelance,
+  artweb,
+
   carrent,
   jobit,
   tripguide,
+
   telegram,
+  mail,
 };

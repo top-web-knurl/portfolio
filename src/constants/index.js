@@ -3,27 +3,21 @@ import {
   backend,
   creator,
   web,
-  javascript,
-  typescript,
+
   html,
   css,
+  javascript,
   reactjs,
-  redux,
-  tailwind,
-  nodejs,
-  mongodb,
-  git,
-  figma,
-  docker,
-  meta,
-  starbucks,
-  tesla,
-  shopify,
+  php,
+  mysql,
+
+  artweb,
+  freelance,
   carrent,
   jobit,
   tripguide,
-  threejs,
-  github,
+
+  mail,
   telegram,
 } from "../assets";
 
@@ -49,21 +43,22 @@ const aboutUs =
   descriprion1: "Я - веб-разработчик, с более 6+ лет опыта, создающий уникальные и функциональные веб-сайты и веб-приложения.",
   descriprion2: "Моя работа - превращать ваши идеи в реальность и делать интернет лучше!",
 };
+
 const services = [
   {
-    title: "Web Developer!",
+    title: "Веб Разработка",
     icon: web,
   },
   {
-    title: "React Native Developer",
+    title: "React/Vue",
     icon: mobile,
   },
   {
-    title: "Backend Developer",
+    title: "CMS Разработка",
     icon: backend,
   },
   {
-    title: "Content Creator",
+    title: "SEO Оптимизация",
     icon: creator,
   },
 ];
@@ -82,12 +77,16 @@ const technologies = [
     icon: javascript,
   },
   {
-    name: "TypeScript",
-    icon: typescript,
-  },
-  {
     name: "React JS",
     icon: reactjs,
+  },
+  {
+    name: "PHP",
+    icon: php,
+  },
+  {
+    name: "mysql",
+    icon: mysql,
   },
 ];
 
@@ -99,66 +98,28 @@ const contacts = [
     href: 'https://t.me/web_samurai'
   },
   {
-    name: "Github",
-    icon: github,
-    iconColor: "#ccc",
-    href: "https://github.com/top-web-knurl"
+    name: "mail",
+    icon: mail,
+    iconColor: "#e6c8ff",
+    href: "mailto:achilovtima@yandex.ru"
   },
 
 ];
 
 const experiences = [
   {
-    title: "React.js Developer",
-    company_name: "Starbucks",
-    icon: starbucks,
+    title: "Фриланс: вёрстка сайтов",
+    company_name: "Freelance",
+    icon: freelance,
     iconBg: "#383E56",
-    date: "March 2020 - April 2021",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
+    date: "Январь 2020 - Февраль 2021",
   },
   {
-    title: "React Native Developer",
-    company_name: "Tesla",
-    icon: tesla,
-    iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Web Developer",
-    company_name: "Shopify",
-    icon: shopify,
+    title: "Веб-студия: веб-разработка (CMS,React)",
+    company_name: "artweb",
+    icon: artweb,
     iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Full stack Developer",
-    company_name: "Meta",
-    icon: meta,
-    iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
+    date: "Февраль 2021 - Настоящее время",
   },
 ];
 
