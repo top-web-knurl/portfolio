@@ -1,18 +1,20 @@
 // import { useState, useRef } from 'react';
-// import { motion } from 'framer-motion';
-
-
+import { motion } from 'framer-motion';
 import { styles } from '../styles';
 import { EarthCanvas } from './canvas';
 import { SectionWrapper } from '../hoc';
 import { contacts } from '../constants';
 import { BallCanvas } from './canvas';
-// import { SlideIn } from '../utils/motion';
+import { slideIn } from '../utils/motion';
+
 
 const Contact = () => {
   return (
     <div className='xl:mt-12 xl:flex-row flex  flex-col-reverse gap-10 overflow-hidden'>
-      <div className='xl:flex-[50%] bg-black-100 p-8 rounded-2xl'>
+      <motion.div 
+      className='xl:flex-[50%] bg-black-100 p-8 rounded-2xl'
+      variants={slideIn("left", "twew", 0.2, .8)}
+      >
         <p className={styles.sectionSubText}>Контакты</p>
         <p className={styles.sectionHeadText}>Как связаться</p>
         <div className="mt-4 flex gap-8">
@@ -49,10 +51,10 @@ const Contact = () => {
             <span className="transform translate-x-0 group-hover:translate-x-1 transition-transform duration-300">&rarr;</span>
           </a>
         </p>
-      </div>
-      <div className="xl:flex-[50%]  xl:h-auto md:h-[450px] h-[300px]">
+      </motion.div>
+       <motion.div  className="xl:flex-[50%]  xl:h-auto md:h-[450px] h-[300px]"   variants={slideIn("right", "twew", 0.5, .9)}>
         <EarthCanvas />
-      </div>
+      </motion.div>
     </div>
   )
 }
