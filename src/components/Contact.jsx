@@ -1,4 +1,3 @@
-// import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { styles } from '../styles';
 import { EarthCanvas } from './canvas';
@@ -10,7 +9,7 @@ import { slideIn } from '../utils/motion';
 
 const Contact = () => {
   return (
-    <div className='xl:mt-12 xl:flex-row flex  flex-col-reverse gap-10 overflow-hidden'>
+    <div className='xl:mt-12 xl:flex-row flex flex-col-reverse gap-10 overflow-hidden relative z-[2]'>
       <motion.div 
       className='xl:flex-[50%] bg-black-100 p-8 rounded-2xl'
       variants={slideIn("left", "twew", 0.2, .8)}
