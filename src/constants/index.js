@@ -21,8 +21,7 @@ import {
   telegram,
 } from "../assets";
 
-export const navLinks = [
-  {
+export const navLinks = [{
     id: "about",
     title: "Про меня",
   },
@@ -36,35 +35,36 @@ export const navLinks = [
   },
 ];
 
-const aboutUs =
-{
+const aboutUs = {
   name: "Тимур",
   greeting: "Здравствуйте, меня зовут",
   descriprion1: "Я - веб-разработчик, с более 6+ лет опыта, создающий уникальные и функциональные веб-сайты и веб-приложения.",
   descriprion2: "Моя работа - превращать ваши идеи в реальность и делать интернет лучше!",
 };
 
-const services = [
-  {
-    title: "Веб Разработка",
+const services = [{
+    title: "Frontend",
+    desc: "HTML, CSS, JavaScript",
     icon: web,
   },
   {
-    title: "React/Vue",
+    title: "Framework",
+    desc: "React, Next, TypeScript",
     icon: mobile,
   },
   {
-    title: "CMS Разработка",
+    title: "Backend",
+    desc: "CMS, PHP, MySQL",
     icon: backend,
   },
   {
-    title: "SEO Оптимизация",
+    title: "Оптимизация",
+    desc: "SEO, Performance, Security",
     icon: creator,
   },
 ];
 
-const technologies = [
-  {
+const technologies = [{
     name: "HTML 5",
     icon: html,
   },
@@ -90,8 +90,7 @@ const technologies = [
   },
 ];
 
-const contacts = [
-  {
+const contacts = [{
     name: "Telegram",
     icon: telegram,
     iconColor: "#27a7e7",
@@ -106,16 +105,17 @@ const contacts = [
 
 ];
 
-const experiences = [
-  {
-    title: "Фриланс: вёрстка сайтов",
+const experiences = [{
+    title: "Фриланс: вёрстка сайтов, поддержка",
+    desc: "Фриланс: вёрстка сайтов, поддержка",
     company_name: "Freelance",
     icon: freelance,
     iconBg: "#383E56",
     date: "Январь 2020 - Февраль 2021",
   },
   {
-    title: "Веб-студия: веб-разработка (CMS,React)",
+    title: "Веб-студия: веб-разработка",
+    desc: "Веб-студия: веб-разработка",
     company_name: "artweb",
     icon: artweb,
     iconBg: "#383E56",
@@ -123,26 +123,22 @@ const experiences = [
   },
 ];
 
-const testimonials = [
-  {
-    testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
+const testimonials = [{
+    testimonial: "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
     name: "Sara Lee",
     designation: "CFO",
     company: "Acme Co",
     image: "https://randomuser.me/api/portraits/women/4.jpg",
   },
   {
-    testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
+    testimonial: "I've never met a web developer who truly cares about their clients' success like Rick does.",
     name: "Chris Brown",
     designation: "COO",
     company: "DEF Corp",
     image: "https://randomuser.me/api/portraits/men/5.jpg",
   },
   {
-    testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
+    testimonial: "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
     name: "Lisa Wang",
     designation: "CTO",
     company: "456 Enterprises",
@@ -150,13 +146,10 @@ const testimonials = [
   },
 ];
 
-const projects = [
-  {
+const projects = [{
     name: "Car Rent",
-    description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
-    tags: [
-      {
+    description: "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+    tags: [{
         name: "react",
         color: "blue-text-gradient",
       },
@@ -174,10 +167,8 @@ const projects = [
   },
   {
     name: "Job IT",
-    description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
-    tags: [
-      {
+    description: "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+    tags: [{
         name: "react",
         color: "blue-text-gradient",
       },
@@ -195,10 +186,8 @@ const projects = [
   },
   {
     name: "Trip Guide",
-    description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-    tags: [
-      {
+    description: "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+    tags: [{
         name: "nextjs",
         color: "blue-text-gradient",
       },
@@ -216,4 +205,12 @@ const projects = [
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects, aboutUs, contacts };
+export {
+  services,
+  technologies,
+  experiences,
+  testimonials,
+  projects,
+  aboutUs,
+  contacts
+};

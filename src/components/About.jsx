@@ -9,7 +9,7 @@ import { fadeIn, textVariant } from '../utils/motion'
 import 'atropos/css/min'
 
 
-const ServiceCard = ({ index, title, icon }) => {
+const ServiceCard = ({ index, title, desc, icon }) => {
   return (
     <Atropos
       className="xs:w-[250px] w-full rounded-[20px]"
@@ -36,6 +36,10 @@ const ServiceCard = ({ index, title, icon }) => {
             className='text-white text-[20px]'
             data-atropos-offset="15"
           >{title}</h3>
+          <div
+            className='text-white text-[13px]'
+            data-atropos-offset="15"
+          >{desc}</div>
         </div>
       </motion.div>
     </Atropos>
@@ -45,6 +49,7 @@ const ServiceCard = ({ index, title, icon }) => {
 ServiceCard.propTypes = {
   index: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
+  desc: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired
 }
 
